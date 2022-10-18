@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    body{
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+    }
+    .nav{
+        width: 100%;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: bisque;
+        border: 0em;
+        margin-top: 3em;
+        padding: 0%;
+        text-align: center;
+    }
+    .sec{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+    }
+    .inp{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30em;
+        height: fit-content;
+        margin: auto;
+        padding: 5em;
+        border-right: 4px solid black;
+    }
+    input{
+        width: 20em;
+        height: 3em;
+        border: 2px solid black;
+        color: gray;
+       margin: 5px;
+       padding: 2px;
+    }
+    button{
+        width: 273px;
+        height: 3em;
+        background-color: black;
+        
+        color: white;
+        margin: 5px;
+       padding: 4px;
+       text-align: center;
+    }
+    .shw{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        
+
+        padding: 5em;
+    }
+    .rec{
+        height: 20em;
+        width: 30em;
+        background-color: white;
+        color: black;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        padding: 2em;
+    }
+    #enrl{
+        text-align: center;
+        font-weight: bold;
+        margin: 4px;
+        padding: 2px;
+    }
+    button:hover{
+        border: 2px solid white;
+    }
+
+</style>
+<body>
+    <div class="nav">Enrollment form</div>
+    <div class="sec">
+        <div class="inp" id="in">
+            <input type="text" id="inp1" value="" placeholder="Name" required>
+            <input type="email" id="inp2" value="" placeholder="Email" required>
+            <input type="text" id="inp3" value="" placeholder="Gender" required>
+            <input type="number" id="inp4" value="" placeholder="Mobile" required>
+            <button onclick="add()">Enroll</button>
+        </div>
+        <div class="shw">
+            
+            <div id="enrl">Enrolled</div>
+            <div class="rec" id="r"></div>
+        </div>
+    </div>
+    <script>
+        
+
+    function add() {
+        const par=document.getElementById("r");
+        var cl=document.getElementById("inp1");       
+        var textnode = document.createTextNode(cl.value);
+        cl.value="";
+        par.appendChild(textnode); 
+              
+        textnode=document.createElement("br");
+        
+        document.getElementById("r").appendChild(textnode);
+        cl=document.getElementById("inp2");       
+         textnode = document.createTextNode(cl.value);
+        cl.value="";
+        par.appendChild(textnode);
+        textnode=document.createElement("br");
+
+        
+        document.getElementById("r").appendChild(textnode);
+        cl=document.getElementById("inp3");       
+         textnode = document.createTextNode(cl.value);
+        cl.value="";
+        par.appendChild(textnode);
+        textnode=document.createElement("br");
+        
+
+        document.getElementById("r").appendChild(textnode);
+        cl=document.getElementById("inp4");       
+         textnode = document.createTextNode(cl.value);
+        cl.value="";     
+        par.appendChild(textnode);
+        textnode=document.createElement("hr");
+        
+        par.appendChild(textnode);
+        par.appendChild(textnode);
+        
+      
+   }
+   
+        
+    </script>
+</body>
+</html>
